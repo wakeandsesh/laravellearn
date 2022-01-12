@@ -5,13 +5,16 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
-        "php": "^8.0|^8.0",
+        "php": "^7.4|^8.0",
+        "darryldecode/cart": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "kalnoy/nestedset": "^6.0",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "laravel/ui": "^3.4"
+        "laravel/ui": "^3.4",
+        "tcg/voyager": "^1.5"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
