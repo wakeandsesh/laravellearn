@@ -14,10 +14,34 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('app');
 });
 
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
+});
+
+Route::get('/categories', function () {
+    return view('categories');
+});
+
+Route::get('/products', function () {
+    return view('products');
+});
+
+Route::get('/product', function () {
+    return view('product');
+});
+
+Route::get('/cart', function () {
+    return view('cart');
+});
+
+Route::get('/aboutus', function () {
+    return view('aboutus');
+});
+
+Route::get('/mobile-start', function () {
+    return view('mobile-start');
 });

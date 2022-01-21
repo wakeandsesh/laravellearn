@@ -1,0 +1,69 @@
+.aboutus {
+}
+
+.aboutus__title {
+    font-weight: 700;
+    font-size: 34px;
+    color: $armadillo;
+}
+
+.aboutus__wrapper {
+    display: flex;
+    margin-top: 15px;
+    align-items: center;
+    .aboutus__img {
+        margin-right: 80px;
+        width: 600px;
+        height: 565px;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.aboutus__info {
+    .aboutus__name {
+        h2 {
+            font-weight: 700;
+            font-size: 42px;
+            color: $armadillo;
+        }
+        h3 {
+            font-weight: 400;
+            font-size: 28px;
+            color: $armadillo;
+        }
+    }
+    .aboutus__adress {
+        .sidebar__contacts {
+            padding: 0;
+            .sidebar__phone {
+                margin-top: 10px;
+            }
+        }
+    }
+    .aboutus__findonmap {
+        font-weight: 700;
+        font-size: 19px;
+        color: $armadillo;
+        text-decoration: underline;
+        margin-top: 35px;
+        display: block;
+    }
+    .aboutus__description {
+        margin-top: 35px;
+        width: 322px;
+        color: $black;
+    }
+    .aboutus__button {
+        font-weight: 700;
+        font-size: 18px;
+        color: $armadillo;
+        height: 60px;
+        background-color: $corn;
+        width: 100%;
+        margin-top: 35px;
+        border: none;
+        border-radius: 8px;
+    }
+}
