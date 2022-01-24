@@ -1,32 +1,27 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-</head>
-<body>
+<x-app>
     <section class="product">
         <div class="product__breadcrumb">
-            <div class="product__breadcrumb__category">Бургеры</div>
+            <div class="product__breadcrumb__category">
+                <a href="{{ route('categories.show', $product->category->slug) }}">
+                    {{ $product->category->title }}
+                </a>
+            </div>
             <div class="product__breadcrumb__arrow">&#8592;</div>
-            <div class="product__breadcrumb__product">Бургер название</div>
+            <div class="product__breadcrumb__product">{{ $product->title }}</div>
         </div>
 
-        <div class="product__inner">
+        <div class="product__inner d-flex justify-content-between">
             <div class="product__img">
-                <img src="{{ asset('/img/product-big-image.png') }}" alt="">
+                <img src="{{ Voyager::image( $product->thumbnail('cropped') ) }}" alt="">
             </div>
             <div class="product__menu">
-                <div class="product__name">Бургер название</div>
+                <div class="product__name">{{ $product->title }}</div>
                 <div class="product__description">
-                    Описание/состав: Gigon gogen. Nitost krotaska. Relig vilig. Spenar bion. Katt rähären. Ist depoprese. Antesk. Hexagök dosavis. Presamma heteroligen
+                    {!! $product->description !!}
                 </div>
                 <div class="product__price">
                     <div class="product__cost">
-                        Цена : <span>55.00гр.</span>
+                        Цена : <span>{{ number_format($product->price, 2) }} гр.</span>
                     </div>
                     <div class="product__value">
                         <div class="product__value__minus">–</div>
@@ -38,5 +33,4 @@
             </div>
         </div>
     </section>
-</body>
-</html>
+</x-app>
