@@ -1,11 +1,31 @@
-
+a {
+    text-decoration: none;
+}
+.disabled {
+    cursor: not-allowed !important;
+}
 .cart-block {
+    z-index: 2000;
     height: 100%;
     width: 0;
     background-color: #fff;
     position: fixed;
     right: 0;
     transition: 0.4s;
+    overflow-x: auto;
+    /* полоса прокрутки (скроллбар) */
+    &::-webkit-scrollbar {
+        width: 5px; /* ширина для вертикального скролла */
+        background-color: #bfbfbf;
+    }
+    /* ползунок скроллбара */
+    &::-webkit-scrollbar-thumb {
+        background-color: $corn;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: $corn;
+        transition: background-color linear 0.1s;
+    }
 }
 
 .cart__open {
@@ -40,6 +60,7 @@
             border-radius: 50%;
             right: -26px;
             top: -26px;
+            padding: 5px;
         }
     }
 }
@@ -64,6 +85,7 @@
         font-weight: 400;
         font-size: 12px;
         color: #8292A4;
+        text-align: right;
         /*display: flex;
         justify-content: flex-end;*/
     }
@@ -157,8 +179,9 @@
     font-size: 17px;
     color: $armadillo;
     margin-top: 24px;
-    display: flex;
-    justify-content: flex-end;
+    text-align: right;
+    /*display: flex;
+    justify-content: flex-end;*/
     span {
         font-weight: 700;
         font-size: 17px;

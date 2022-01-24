@@ -148,3 +148,24 @@ body {
         margin-top: 30px;
     }
 }
+
+.spinner-bg {
+    background-color: #000000;
+    opacity: .7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2500;
+    .spinner-grow {
+        height: 100px;
+        width: 100px;
+        color: $corn;
+    }
+}

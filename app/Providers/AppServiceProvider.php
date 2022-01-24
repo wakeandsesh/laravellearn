@@ -6,6 +6,8 @@ use App\Models\Category;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;
 
+use Cart;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -27,6 +29,10 @@ class AppServiceProvider extends ServiceProvider
     {
         view()->composer('components.app', function($view){
             $view->with('categories', Category::get()->toTree());
+        });
+
+        view()->composer(['components.cart', 'vendor.notifications.email'], function($view){
+            $view->with('cart_products', Cart::getContent()->sortByDesc('id'));
         });
     }
 }
