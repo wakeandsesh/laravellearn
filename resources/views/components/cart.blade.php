@@ -1,4 +1,4 @@
-<div class="cart-background">
+<div class="cart-background" id="test">
     <section class="cart-block">
         <div class="cart__inner">
             <div class="cart__header">
