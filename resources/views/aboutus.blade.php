@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-</head>
-<body>
+<x-app>
     <section class="aboutus">
         <div class="aboutus__title">
             О нас
@@ -32,14 +23,14 @@
                 </div>
                 <a class="aboutus__findonmap" href="#">Найти на карте</a>
                 <div class="aboutus__description">
-                Gigon gogen. Nitost krotaska. Relig vilig. <br>
-                Spenar bion. Katt rähären. <br>
-                Ist depoprese. Antesk. Hexagök dosavis. <br>
-                Presamma heteroligen
+                    Gigon gogen. Nitost krotaska. Relig vilig. <br>
+                    Spenar bion. Katt rähären. <br>
+                    Ist depoprese. Antesk. Hexagök dosavis. <br>
+                    Presamma heteroligen
                 </div>
-                <button class="aboutus__button">Посмотреть меню</button>
+                <a href="{{ route('categories.index') }}" class="aboutus__button">Посмотреть меню</a>
             </div>
         </div>
     </section>
-</body>
-</html>
+</x-app>
+

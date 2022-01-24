@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-</head>
-<body>
+<div class="cart-background" id="test">
     <section class="cart-block">
         <div class="cart__inner">
             <div class="cart__header">
@@ -97,5 +88,5 @@
             </button>
         </div>
     </section>
-</body>
-</html>
+</div>
+

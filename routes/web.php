@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,22 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('app');
-});
+Route::get('/', [CategoryController::class, 'index'])->name('categories.index');
 
+Route::get('/category/{category:slug}', [CategoryController::class, 'show'])->name('categories.show');
 
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
-
-Route::get('/categories', function () {
-    return view('categories');
-});
-
-Route::get('/products', function () {
-    return view('products');
-});
+Route::get('/product/{product:slug}', [ProductController::class, 'show'])->name('product.show');
 
 Route::get('/product', function () {
     return view('product');
@@ -44,4 +35,8 @@ Route::get('/aboutus', function () {
 
 Route::get('/mobile-start', function () {
     return view('mobile-start');
+});
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
 });

@@ -1,30 +1,39 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Категории</title>
-    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-</head>
-<body>
+<x-app>
     <section class="categories">
-        <div class="category__card">
-            <div class="category__name">Бургеры</div>
-            <img src="{{ asset('/img/category-burger.png') }}" alt="" class="category__img">
+        @foreach($categories as $category)
+            <div class="category__card">
+                <a href="{{ route('categories.show', $category->slug) }}">
+                    <div class="category__name">{{ $category->title }}</div>
+                    <img src="{{ Voyager::image( $category->thumbnail('cropped', 'image_desc') ) }}" alt="{{ $category->title }}" class="category__img">
+                </a>
+            </div>
+        @endforeach
+        {{--<div class="category__card">
+            <a href="">
+                <div class="category__name">Бургеры</div>
+                <img src="{{ asset('/img/category-burger.png') }}" alt="" class="category__img">
+            </a>
         </div>
         <div class="category__card">
-            <div class="category__name">Хотдоги</div>
-            <img src="{{ asset('/img/category-hotdog.png') }}" alt="" class="category__img">
+            <a href="">
+                <div class="category__name">Хотдоги</div>
+                <img src="{{ asset('/img/category-hotdog.png') }}" alt="" class="category__img">
+            </a>
+
         </div>
         <div class="category__card">
-            <div class="category__name">Кофе / чай</div>
-            <img src="{{ asset('/img/category-coffee.png') }}" alt="" class="category__img">
+            <a href="">
+                <div class="category__name">Кофе / чай</div>
+                <img src="{{ asset('/img/category-coffee.png') }}" alt="" class="category__img">
+            </a>
+
         </div>
         <div class="category__card">
-            <div class="category__name">Десерты</div>
-            <img src="{{ asset('/img/category-sweets.png') }}" alt="" class="category__img">
-        </div>
+            <a href="">
+                <div class="category__name">Десерты</div>
+                <img src="{{ asset('/img/category-sweets.png') }}" alt="" class="category__img">
+            </a>
+
+        </div>--}}
     </section>
-</body>
-</html>
+</x-app>

@@ -6,10 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Kalnoy\Nestedset\NodeTrait;
 use TCG\Voyager\Traits\Translatable;
+use TCG\Voyager\Traits\Resizable;
 
 class Category extends Model
 {
-    use HasFactory, Translatable, NodeTrait;
+    use HasFactory, Translatable, NodeTrait, Resizable;
 
     public function categories()
     {
@@ -32,6 +33,6 @@ class Category extends Model
 
     public function products()
     {
-        return $this->hasMany(Product::class);
+        return $this->hasMany('App\Models\product');
     }
 }
