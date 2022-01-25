@@ -91,33 +91,47 @@ a {
     }
 }
 
-.cart__card {
-    display: flex;
-    border: 2px solid $silver;
-    border-radius: 8px;
-    height: 120px;
-    overflow: hidden;
-    margin-top: 20px;
-    .card__card__img {
-        width: 132px;
-        img {
+.cart__cards {
+    .cart__card {
+        display: flex;
+        border: 2px solid $silver;
+        border-radius: 8px;
+        height: 120px;
+        overflow: hidden;
+        margin-top: 20px;
+
+        .cart__card__img {
+            width: 100% !important;
+            max-width: 132px;
+
+            img {
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover;
+            }
+        }
+
+        .cart__card__info {
+            padding: 15px 24px;
             width: 100%;
-        }
-    }
-    .cart__card__info {
-        padding: 15px 24px;
-        .cart__card__name {
-            font-weight: 400;
-            font-size: 16px;
-            color: $armadillo;
-        }
-        .product__cost {
-            span {
+
+            .cart__card__name {
+                font-weight: 400;
                 font-size: 16px;
+                color: $armadillo;
+            }
+
+            .product__cost {
+                span {
+                    font-size: 16px;
+                }
             }
         }
     }
 }
+
+
+
 
 
 

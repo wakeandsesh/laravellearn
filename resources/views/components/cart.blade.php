@@ -17,12 +17,13 @@
                 </div>
                 <input name="payment" value="" id="payment_form" type="text" style="display: none">
             </form>
+
             <div class="cart__cards">
                 @if($cart_products->count() > 0)
                     @foreach($cart_products as $cart_product)
                         <div class="cart__card">
                             <div class="cart__card__img">
-                                <img src="{{ Voyager::image($cart_product->attributes->image) }}" alt="{{ $cart_product->name }}" class="w-100 h-100">
+                                <img src="{{ Voyager::image($cart_product->attributes->image) }}" alt="{{ $cart_product->name }}">
                             </div>
                             <div class="cart__card__info">
                                 <div class="cart__card__name">{{ $cart_product->name }}</div>
@@ -46,6 +47,8 @@
                     <h2 class="my-5">Корзина пуста</h2>
                 @endif
             </div>
+
+
 
             <div class="cart__paymethod">
                 <span>Выберите метод оплаты</span>
