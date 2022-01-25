@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>Viki Grill</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -60,10 +62,24 @@
 
         <x-cart />
     </div>
+    {{--Spiner BG--}}
+    <div class="spinner-bg" style="display: none;">
+        <div class="spinner-grow" role="status">
+            <span class="visually-hidden"></span>
+        </div>
+    </div>
+
+    <div class="cart-bg fixed-top w-100 h-100" style="display: none;background-color: black; opacity: 0.6;transition: 0.4s"></div>
 
     {{-- Jquery --}}
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-
+    {{--Sweet Alert--}}
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {{-- App.js--}}
     <script src="{{ asset('js/app.js') }}"></script>
+
+
+
+
 </body>
 </html>

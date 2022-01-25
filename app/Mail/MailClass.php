@@ -11,14 +11,15 @@ class MailClass extends Mailable
 {
     use Queueable, SerializesModels;
 
+    protected $data;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($data)
     {
-        //
+        $this->data = $data;
     }
 
     /**
@@ -28,6 +29,10 @@ class MailClass extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->markdown('vendor.notifications.email')
+            ->subject('Заказ с сайта VikiGrill')
+            ->with([
+                'data' => $this->data,
+            ]);
     }
 }

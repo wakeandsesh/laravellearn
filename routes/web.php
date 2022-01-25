@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,10 +27,6 @@ Route::get('/product', function () {
     return view('product');
 });
 
-Route::get('/cart', function () {
-    return view('cart');
-});
-
 Route::get('/aboutus', function () {
     return view('aboutus');
 });
@@ -36,6 +34,13 @@ Route::get('/aboutus', function () {
 Route::get('/mobile-start', function () {
     return view('mobile-start');
 });
+
+/*cart*/
+Route::post('/cart-add', [CartController::class, 'addToCart'])->name('cart.add');
+Route::post('/cart-remove', [CartController::class, 'removeFromCart'])->name('cart.remove');
+Route::post('/cart-update', [CartController::class, 'cartUpdate'])->name('cart.update');
+
+Route::post('/cart-order',[OrderController::class, 'cartOrder']);
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

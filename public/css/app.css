@@ -11490,12 +11490,37 @@ textarea.form-control-lg {
   border-radius: 14px;
 }
 
+a {
+  text-decoration: none;
+}
+
+.disabled {
+  cursor: not-allowed !important;
+}
+
 .cart-block {
+  z-index: 2000;
   height: 100%;
   width: 500px;
   background-color: #fff;
   position: absolute;
   transition: 0.4s;
+  overflow-x: auto;
+  /* полоса прокрутки (скроллбар) */
+  /* ползунок скроллбара */
+}
+.cart-block::-webkit-scrollbar {
+  width: 5px;
+  /* ширина для вертикального скролла */
+  background-color: #bfbfbf;
+}
+.cart-block::-webkit-scrollbar-thumb {
+  background-color: #F7C607;
+}
+.cart-block::-webkit-scrollbar-thumb:hover {
+  background-color: #F7C607;
+  -webkit-transition: background-color linear 0.1s;
+  transition: background-color linear 0.1s;
 }
 
 .cart__open {
@@ -11532,6 +11557,7 @@ textarea.form-control-lg {
   border-radius: 50%;
   right: -26px;
   top: -26px;
+  padding: 5px;
 }
 
 .cart__form {
@@ -11555,11 +11581,12 @@ textarea.form-control-lg {
   font-weight: 400;
   font-size: 12px;
   color: #8292A4;
+  text-align: right;
   /*display: flex;
   justify-content: flex-end;*/
 }
 
-.cart__card {
+.cart__cards .cart__card {
   display: flex;
   border: 2px solid #C8C8C8;
   border-radius: 8px;
@@ -11567,21 +11594,26 @@ textarea.form-control-lg {
   overflow: hidden;
   margin-top: 20px;
 }
-.cart__card .card__card__img {
-  width: 132px;
+.cart__cards .cart__card .cart__card__img {
+  width: 100% !important;
+  max-width: 132px;
 }
-.cart__card .card__card__img img {
+.cart__cards .cart__card .cart__card__img img {
+  width: 100% !important;
+  height: 100% !important;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.cart__cards .cart__card .cart__card__info {
+  padding: 15px 24px;
   width: 100%;
 }
-.cart__card .cart__card__info {
-  padding: 15px 24px;
-}
-.cart__card .cart__card__info .cart__card__name {
+.cart__cards .cart__card .cart__card__info .cart__card__name {
   font-weight: 400;
   font-size: 16px;
   color: #3A352D;
 }
-.cart__card .cart__card__info .product__cost span {
+.cart__cards .cart__card .cart__card__info .product__cost span {
   font-size: 16px;
 }
 
@@ -11639,8 +11671,9 @@ textarea.form-control-lg {
   font-size: 17px;
   color: #3A352D;
   margin-top: 24px;
-  display: flex;
-  justify-content: flex-end;
+  text-align: right;
+  /*display: flex;
+  justify-content: flex-end;*/
 }
 .cart__totalprice span {
   font-weight: 700;
@@ -11903,6 +11936,7 @@ body {
   margin-top: 30px;
 }
 
+<<<<<<< HEAD
 @media only screen and (max-width: 1400px) and (min-width: 1200px) {
   .main__body {
     padding: 20px 25px 30px 25px;
@@ -11912,4 +11946,24 @@ body {
   .main__body {
     padding: 20px 25px 30px 25px;
   }
+=======
+.spinner-bg {
+  background-color: #000000;
+  opacity: 0.7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2500;
+}
+.spinner-bg .spinner-grow {
+  height: 100px;
+  width: 100px;
+  color: #F7C607;
+>>>>>>> cc5e6a1d5c5bfb531ce4c4860ac4fc136560d10f
 }
