@@ -11287,14 +11287,16 @@ textarea.form-control-lg {
   }
 }
 .categories {
-  margin-top: 40px;
   display: grid;
-  grid-template-columns: 712px 712px;
+  grid-template-columns: 600px 600px;
   grid-row-gap: 45px;
-  grid-column-gap: 55px;
   justify-content: center;
+  grid-column-gap: 50px;
 }
 
+.category__card {
+  width: 600px;
+}
 .category__card .category__name {
   font-weight: 700;
   font-size: 21px;
@@ -11303,8 +11305,51 @@ textarea.form-control-lg {
 .category__card .category__img {
   display: block;
   border-radius: 20px;
+  height: 210px;
+  width: 100%;
 }
 
+@media only screen and (max-width: 1600px) and (min-width: 1400px) {
+  .category__card {
+    width: 500px;
+  }
+
+  .categories {
+    grid-template-columns: 500px 500px;
+  }
+}
+@media only screen and (max-width: 1400px) and (min-width: 1200px) {
+  .category__card {
+    width: 450px;
+  }
+
+  .categories {
+    grid-template-columns: 450px 450px;
+    grid-column-gap: 35px;
+  }
+}
+@media only screen and (max-width: 1200px) and (min-width: 992px) {
+  .category__card {
+    width: 340px;
+  }
+
+  .categories {
+    grid-template-columns: 340px 340px;
+    grid-column-gap: 25px;
+    grid-row-gap: 30px;
+  }
+}
+@media only screen and (max-width: 992px) and (min-width: 768px) {
+  .category__card {
+    width: 340px;
+  }
+
+  .categories {
+    grid-template-columns: 340px 340px;
+    grid-column-gap: 25px;
+    grid-row-gap: 30px;
+  }
+}
 .products__title {
   font-weight: 700;
   font-size: 34px;
@@ -11375,6 +11420,7 @@ textarea.form-control-lg {
 .product__inner .product__img {
   width: 600px;
   height: 600px;
+  margin-right: 50px;
 }
 .product__inner .product__img img {
   width: 100%;
@@ -11446,15 +11492,14 @@ textarea.form-control-lg {
 
 .cart-block {
   height: 100%;
-  width: 0;
+  width: 500px;
   background-color: #fff;
-  position: fixed;
-  right: 0;
+  position: absolute;
   transition: 0.4s;
 }
 
 .cart__open {
-  width: 500px;
+  transition: 0.4s;
 }
 
 .cart__inner {
@@ -11675,6 +11720,10 @@ textarea.form-control-lg {
   margin-top: 35px;
   border: none;
   border-radius: 8px;
+  display: block;
+  text-align: center;
+  line-height: 60px;
+  text-decoration: none;
 }
 
 .mobile {
@@ -11726,6 +11775,7 @@ textarea.form-control-lg {
 
 html {
   height: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -11742,10 +11792,7 @@ body {
 }
 
 .main__body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 30px;
+  padding: 40px 85px 30px 85px;
 }
 
 .header {
@@ -11765,6 +11812,7 @@ body {
   font-weight: 700;
   font-size: 17px;
   padding-right: 10px;
+  color: #3A352D;
 }
 .cart .cart__img {
   display: block;
@@ -11772,7 +11820,6 @@ body {
 
 .sidebar {
   width: 280px;
-  /*height: 100%;*/
   min-height: 100vh;
   background-color: #F7C607;
   box-shadow: 3px 0 12px;
@@ -11854,4 +11901,15 @@ body {
   font-size: 15px;
   color: #3A352D;
   margin-top: 30px;
+}
+
+@media only screen and (max-width: 1400px) and (min-width: 1200px) {
+  .main__body {
+    padding: 20px 25px 30px 25px;
+  }
+}
+@media only screen and (max-width: 1200px) and (min-width: 992px) {
+  .main__body {
+    padding: 20px 25px 30px 25px;
+  }
 }

@@ -10,7 +10,7 @@
             <div class="product__breadcrumb__product">{{ $product->title }}</div>
         </div>
 
-        <div class="product__inner d-flex justify-content-between">
+        <div class="product__inner d-flex">
             <div class="product__img">
                 <img src="{{ Voyager::image( $product->thumbnail('cropped') ) }}" alt="">
             </div>
