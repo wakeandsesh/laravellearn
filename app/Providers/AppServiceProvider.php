@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('components.app', function($view){
+        view()->composer(['components.app', 'products'], function($view){
             $view->with('categories', Category::get()->toTree());
         });
 

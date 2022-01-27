@@ -1,5 +1,6 @@
 <div class="cart-background" id="cartBody">
     <section class="cart-block">
+        <button class="cart__close__button" type="button">X</button>
         <div class="cart__inner">
             <div class="cart__header">
                 <div class="cart__title">Корзина</div>

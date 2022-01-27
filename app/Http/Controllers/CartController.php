@@ -17,7 +17,7 @@ class CartController extends Controller
                 'id' => $product->id,
                 'name' => $product->title,
                 'price' => $product->price,
-                'quantity' => $product->quantity ? $product->quantity : '1',
+                'quantity' => $request->quantity ? $request->quantity : '1',
                 'attributes' => array('image' => $product->image)
             )
         ));

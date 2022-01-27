@@ -16,12 +16,12 @@
                 <div class="aboutus__adress">
                     <div class="sidebar__contacts">
                         <div class="sidebar__adress">
-                            адресс: г.Никополь, ул. Название
+                            адресс: г.Никополь, ул. Трубников, 91
                         </div>
                         <a class="sidebar__phone" href="tel:+380731234488">tel: +38 073 123 44 88</a>
                     </div>
                 </div>
-                <a class="aboutus__findonmap" href="#">Найти на карте</a>
+                <a class="aboutus__findonmap" target="_blank" href="https://goo.gl/maps/smT7ReH72WaB3zoC9">Найти на карте</a>
                 <div class="aboutus__description">
                     Gigon gogen. Nitost krotaska. Relig vilig. <br>
                     Spenar bion. Katt rähären. <br>

@@ -1,5 +1,5 @@
 .product {
-    
+
 }
 
 .product__breadcrumb {
@@ -55,8 +55,8 @@
 .product__price {
     display: flex;
     margin-top: 36px;
+    margin-bottom: 70px;
     justify-content: space-between;
-    align-items: center;
 }
 
 .product__cost {
@@ -89,13 +89,12 @@
 }
 
 .product__button {
-    margin-top: 55px;
     border: none;
-    width: 340px;
-    height: 60px;
+    padding: 20px 45px;
     background-color: $corn;
     color: $armadillo;
     font-weight: 700;
     font-size: 18px;
     border-radius: 14px;
 }
+

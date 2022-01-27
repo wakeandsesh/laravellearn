@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+use Jenssegers\Agent\Agent;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +17,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+$agent = new Agent();
+if ($agent->isMobile()) {
+    Route::redirect('/', '/mobile-start');
+} else {
+    Route::redirect('/', '/categories');
+}
 
-Route::get('/', [CategoryController::class, 'index'])->name('categories.index');
+
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 
 Route::get('/category/{category:slug}', [CategoryController::class, 'show'])->name('categories.show');
 

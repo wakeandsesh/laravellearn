@@ -43,8 +43,13 @@ body {
 
 .header {
     width: 100%;
-    height: 80px;
+    min-height: 80px;
     background-color: $corn;
+    padding: 10px;
+    .mobile-logo {
+        border-radius: 50%;
+        display: none;
+    }
 }
 
 .cart {
@@ -62,6 +67,19 @@ body {
     .cart__img {
         display: block;
     }
+    .cart_value {
+        position: absolute;
+        width: 28px;
+        height: 28px;
+        background-color: $tango;
+        color: #fff;
+        text-align: center;
+        font-weight: 700;
+        font-size: 18px;
+        border-radius: 50%;
+        right: 35px;
+        padding: 5px;
+    }
 }
 
 .sidebar {
@@ -70,6 +88,13 @@ body {
     background-color: $corn;
     box-shadow: 3px 0 12px;
     position: sticky;
+    padding: 0 15px 30px;
+    .sidebar__header__desctop {
+        display: block;
+    }
+    .sidebar__header__mobile {
+         display: none;
+     }
     .main__logo {
         margin-top: 45px;
         img {
@@ -82,7 +107,6 @@ body {
         display: flex;
         flex-direction: column;
         margin-top: 36px;
-        padding: 0 15px;
         .sidebar__category__link {
             height: 50px;
             line-height: 50px;
@@ -93,13 +117,22 @@ body {
             font-size: 17px;
             background-color: $corn;
             color: $armadillo;
+            margin: 2px;
+            word-break: break-all;
         }
         .sidebar__category__link:hover {
             color: $corn;
             background-color: $armadillo;
             transition: 0.7s;
         }
+
     }
+}
+
+.active {
+    color: $corn !important;
+    background-color: $armadillo !important;
+    border-radius: 18px;
 }
 
 .sidebar__name {
@@ -129,6 +162,12 @@ body {
     text-decoration: none;
     color: $armadillo;
 }
+.sidebar__aboutus:hover {
+    color: $corn;
+    background-color: $armadillo;
+    transition: 0.7s;
+    border-radius: 18px;
+}
 
 .sidebar__contacts {
     margin-top: 18px;
@@ -148,20 +187,6 @@ body {
     }
 }
 
-@media only screen and (max-width: $xxl) and (min-width: $xl) {
-    .main__body {
-        padding: 20px 25px 30px 25px;
-    }
-
-}
-
-@media only screen and (max-width: $xl) and (min-width: $lg) {
-    .main__body {
-        padding: 20px 25px 30px 25px;
-    }
-}
-
-
 .spinner-bg {
     background-color: #000000;
     opacity: .7;
@@ -175,10 +200,117 @@ body {
     top: 0;
     right: 0;
     left: 0;
-    z-index: 2500;
+    z-index: 10000;
     .spinner-grow {
         height: 100px;
         width: 100px;
         color: $corn;
     }
 }
+
+.swal2-container {
+    z-index: 20000 !important;
+}
+
+.burger-btn {
+    overflow: visible;
+    cursor: pointer;
+    fill: #1e272e;
+    margin-left: 43px;
+    display: none;
+    &--1,
+    &--2,
+    &--3 {
+        transition: .2s;
+        transform-origin: center center;
+    }
+
+    &.active {
+        background-color: transparent !important;
+        .burger-btn--1 {
+            transform: translate(-9px, 13px) rotate(45deg);
+        }
+        .burger-btn--2 {
+            transform: translateX(20px);
+            opacity: 0;
+        }
+        .burger-btn--3 {
+            transform: translate(-7px, -10px) rotate(-45deg);
+        }
+    }
+}
+@media only screen and (max-width: $xxl){
+    .main__body {
+        padding: 20px 25px 30px 25px;
+    }
+
+}
+
+@media only screen and (max-width: $xl) {
+    .main__body {
+        padding: 20px 25px 30px 25px;
+    }
+}
+
+@media only screen and (max-width: $lg) {
+    .main__body {
+        padding: 25px 60px;
+    }
+}
+
+@media only screen and (max-width: $md) {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        .mobile-logo {
+            display: block;
+        }
+    }
+    .burger-btn {
+        display: block;
+    }
+    .double-burger-btn {
+        margin-left: auto;
+    }
+    .main__body {
+        padding: 30px 15px 30px 15px;
+    }
+    .cart {
+        .cart__text {
+            display: none;
+        }
+        .cart_value {
+            display: block;
+        }
+    }
+
+    .sidebar {
+        position: fixed;
+        overflow-x: auto;
+        z-index: 1050;
+        top: 0;
+        left: 0;
+        clip-path: circle(0px at 0 0px);
+        transition: 1s ease all;
+        height: 100vh;
+        width: auto;
+        .sidebar__header__desctop {
+            display: none;
+        }
+        .sidebar__header__mobile {
+            display: block;
+        }
+        &.sidebar-open{
+            display: flex;
+            flex-direction: column;
+            clip-path: circle(100%);
+            transition: 1s ease all;
+        }
+    }
+
+
+}
+
+
+

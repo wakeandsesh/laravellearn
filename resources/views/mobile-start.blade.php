@@ -14,7 +14,10 @@
                 <img src="{{ asset('/img/main-logo.png') }}" alt="">
             </div>
             <h3>Проголодались ?</h3>
-            <button class="mobile__button">Давайте закажем поесть</button>
+            @php
+            $category = \App\Models\Category::query()->firstOrFail();
+            @endphp
+            <a href="{{ route('categories.show', $category->slug) }}" class="mobile__button">Давайте закажем поесть</a>
         </div>
     </section>
 </body>

@@ -24,12 +24,12 @@
                         Цена : <span>{{ number_format($product->price, 2) }} гр.</span>
                     </div>
                     <div class="product__value">
-                        <div class="product__value__minus">–</div>
-                        <div class="product__value__number">2</div>
-                        <div class="product__value__plus">+</div>
+                        <a class="product__value__minus product__quantity__btn" data-action="decrease">–</a>
+                        <div class="product__value__number product_value">1</div>
+                        <a class="product__value__plus product__quantity__btn" data-action="increase">+</a>
                     </div>
                 </div>
-                <button class="product__button">Добавить в корзину</button>
+                <a data-id="{{ $product->id }}" href="#" class="product__button add-cart">Добавить в корзину</a>
             </div>
         </div>
     </section>
