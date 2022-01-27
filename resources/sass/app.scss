@@ -25,7 +25,7 @@ html {
 
 body {
     height: 100%;
-
+    overflow-x: hidden;
 }
 
 .content__wrapper {
@@ -58,6 +58,7 @@ body {
     justify-content: flex-end;
     margin-right: 50px;
     line-height: 80px;
+    position: relative;;
     .cart__text {
         font-weight: 700;
         font-size: 17px;
@@ -77,7 +78,7 @@ body {
         font-weight: 700;
         font-size: 18px;
         border-radius: 50%;
-        right: 35px;
+        right: -18px;
         padding: 5px;
     }
 }
@@ -272,6 +273,7 @@ body {
     }
     .double-burger-btn {
         margin-left: auto;
+        padding-top: 43px;
     }
     .main__body {
         padding: 30px 15px 30px 15px;
@@ -292,7 +294,7 @@ body {
         top: 0;
         left: 0;
         clip-path: circle(0px at 0 0px);
-        transition: 1s ease all;
+        transition: 0.6s ease all;
         height: 100vh;
         width: auto;
         .sidebar__header__desctop {
@@ -300,6 +302,18 @@ body {
         }
         .sidebar__header__mobile {
             display: block;
+            .sidebar__mobile__img {
+                position: absolute;
+                top: -70px;
+                left: -60px;
+                max-width: 310px;
+                width: 100%;
+                border-radius: 50%;
+                z-index: -1;
+            }
+            .sidebar__mobile__logo {
+                margin: 0 25px 0 145px;
+            }
         }
         &.sidebar-open{
             display: flex;

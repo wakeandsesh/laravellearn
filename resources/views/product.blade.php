@@ -21,7 +21,7 @@
                 </div>
                 <div class="product__price">
                     <div class="product__cost">
-                        Цена : <span>{{ number_format($product->price, 2) }} гр.</span>
+                        Цена : <span>{{ number_format($product->price, 2) }} грн.</span>
                     </div>
                     <div class="product__value">
                         <a class="product__value__minus product__quantity__btn" data-action="decrease">–</a>

@@ -9,7 +9,7 @@
             <div class="categories_mob">
                 @foreach($categories as $cat)
                     <a href="{{ route('categories.show', $cat->slug) }}">
-                        <img class="categories__mobile__img {{ $cat->slug == $category->slug ? 'active' : ''  }}" src="{{ Voyager::image( $cat->thumbnail('cropped', 'image_mob') ) }}" alt="{{ $cat->title }}">
+                        <img class="categories__mobile__img {{ $cat->slug == $category->slug ? 'active' : ''  }}" src="{{ Voyager::image( $cat->image_mob ) }}" alt="{{ $cat->title }}">
                         <p>{{ $cat->title }}</p>
                     </a>
                 @endforeach
@@ -31,7 +31,7 @@
                             <div class="products__name">{{ $product->title }}</div>
                         </a>
                         <div class="products__card__footer">
-                            <div class="products__price">{{ number_format($product->price, 2) }} гр.</div>
+                            <div class="products__price">{{ number_format($product->price, 2) }} грн.</div>
                             <a data-id="{{ $product->id }}" class="add-cart add__cart__button" href="#">
                                 <img class="products__cart" src="{{ asset('/img/product-cart.png') }}" alt="">
                             </a>
@@ -43,6 +43,6 @@
             <h1 class="text-center">Товаров в категории <strong>"{{ $category->title }}"</strong> не найдено &#128542;</h1>
             <a class="see__another__categories" href="{{ route('categories.show', 'burgery') }}">посмотреть другие категории</a>
         @endif
-
     </section>
+    {{ $products->withQueryString()->links() }}
 </x-app>

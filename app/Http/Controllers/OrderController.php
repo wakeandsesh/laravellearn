@@ -11,11 +11,13 @@ class OrderController extends Controller
 {
     public function cartOrder(Request $request)
     {
+        if (Cart::getContent()->count() === 0) {
+            return response()->json(['error_body']);
+        }
         if ($request->payment == 'payment_card') {
             $payment = 'Оплата на карту';
             $paid = 'Оплачено';
-        }
-        elseif ($request->payment == 'payment_cash') {
+        } elseif ($request->payment == 'payment_cash') {
             $payment = 'Оплата наличными';
             $paid = 'Не оплачено';
         }
@@ -58,5 +60,6 @@ class OrderController extends Controller
         }
 
         return response()->json(['error']);
+
     }
 }

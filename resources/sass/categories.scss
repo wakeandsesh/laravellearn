@@ -14,10 +14,13 @@
         color: $armadillo;
     }
     .category__img {
-        display: block;
         border-radius: 20px;
         height: 210px;
         width: 100%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        background-color: $corn;
     }
 }
 

@@ -21,11 +21,21 @@ class CartController extends Controller
                 'attributes' => array('image' => $product->image)
             )
         ));
+        $data = [
+          'total_price' => number_format(Cart::getTotal(),2),
+          'total_quantity' => Cart::getTotalQuantity()
+        ];
+        return $data;
     }
 
     public function removeFromCart(Request $request) {
 
         Cart::remove($request->product_id);
+        $data = [
+            'total_price' => number_format(Cart::getTotal(),2),
+            'total_quantity' => Cart::getTotalQuantity()
+        ];
+        return $data;
 
     }
 
@@ -37,16 +47,26 @@ class CartController extends Controller
 
             Cart::update($product->id, array('quantity' => 1));
             if($request->ajax()){
-                $cart_products = Cart::getContent()->sortByDesc('id');
-                return response()->view('components.cart', compact('cart_products'));
+                /*$cart_products = Cart::getContent()->sortByDesc('id');*/
+                $data = [
+                    'total_price' => number_format(Cart::getTotal(),2),
+                    'total_quantity' => Cart::getTotalQuantity()
+                ];
+                /*return response()->view('components.cart', compact('cart_products', 'data'));*/
+                return $data;
             }
         }
 
         if ($request->cart_action == 'decrease') {
             Cart::update($product->id, array('quantity' => -1));
             if($request->ajax()){
-                $cart_products = Cart::getContent()->sortByDesc('id');
-                return response()->view('components.cart', compact('cart_products'));
+                /*$cart_products = Cart::getContent()->sortByDesc('id');*/
+                $data = [
+                    'total_price' => number_format(Cart::getTotal(),2),
+                    'total_quantity' => Cart::getTotalQuantity()
+                ];
+                /*return response()->view('components.cart', compact('cart_products', 'data'));*/
+                return $data;
             }
         }
     }
