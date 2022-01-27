@@ -11340,25 +11340,23 @@ textarea.form-control-lg {
   }
 }
 @media only screen and (max-width: 992px) {
-  .category__card {
-    width: 340px;
-  }
-
   .categories {
-    grid-template-columns: 340px 340px;
-    grid-column-gap: 25px;
-    grid-row-gap: 30px;
+    grid-template-columns: 80%;
+  }
+  .categories .category__card {
+    width: 100%;
+  }
+  .categories .category__card .category__name {
+    text-align: center;
   }
 }
 @media only screen and (max-width: 768px) {
-  .category__card {
-    width: 265px;
-  }
-
   .categories {
-    grid-template-columns: 265px 265px;
-    grid-column-gap: 25px;
-    grid-row-gap: 30px;
+    grid-template-columns: 250px 250px;
+    grid-column-gap: 16px;
+  }
+  .categories .category__card {
+    width: 250px;
   }
 }
 .products {
@@ -11472,62 +11470,56 @@ textarea.form-control-lg {
   margin: 20px auto;
 }
 
-@media only screen and (max-width: 1600px) {
+@media only screen and (max-width: 1400px) {
   .products__inner {
-    grid-template-columns: repeat(4, 250px) !important;
+    grid-template-columns: repeat(4, 200px);
     grid-column-gap: 30px;
     grid-row-gap: 35px;
   }
 }
 @media only screen and (max-width: 1200px) {
   .products__inner {
-    grid-template-columns: repeat(4, 180px) !important;
-    grid-column-gap: 30px;
-    grid-row-gap: 35px;
+    grid-template-columns: repeat(3, 200px);
+  }
+  .products__inner .products__card .products__name {
+    font-size: 17px;
   }
 }
 @media only screen and (max-width: 992px) {
   .products__inner {
-    grid-template-columns: repeat(4, 150px) !important;
+    grid-template-columns: repeat(3, 150px);
     grid-column-gap: 30px;
     grid-row-gap: 35px;
   }
 }
 @media only screen and (max-width: 768px) {
+  .products__title {
+    text-align: center;
+  }
+
   .products__inner {
-    display: grid;
-    grid-template-columns: repeat(3, 165px) !important;
-    grid-column-gap: 30px;
-    grid-row-gap: 35px;
+    grid-template-columns: repeat(2, 220px);
   }
 
   .categories__mobile {
     display: block;
   }
+  .categories__mobile .categories_title {
+    text-align: center;
+  }
+  .categories__mobile .categories_mob {
+    justify-content: space-around;
+  }
 }
 @media only screen and (max-width: 576px) {
   .products__inner {
-    display: grid;
-    grid-template-columns: repeat(2, 155px) !important;
-    grid-column-gap: 30px;
-    grid-row-gap: 35px;
+    grid-template-columns: repeat(2, 155px);
   }
 
   .category_image {
-    display: none !important;
+    display: none;
   }
 }
-/*@media screen and (max-width: $sm) and (min-width: $xs) {
-    .products__inner {
-        display: grid;
-        grid-template-columns: repeat(2, 200px) !important;
-        grid-column-gap: 30px;
-        grid-row-gap: 35px;
-    }
-    .category_image {
-        display: none !important;
-    }
-}*/
 .product__breadcrumb {
   display: flex;
   align-items: center;
@@ -11622,6 +11614,58 @@ textarea.form-control-lg {
   border-radius: 14px;
 }
 
+@media only screen and (max-width: 1400px) {
+  .product__inner .product__img {
+    height: 500px;
+    width: 500px;
+  }
+  .product__inner .product__menu {
+    width: 370px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .product__inner .product__img {
+    height: 400px;
+    width: 400px;
+    margin-right: 25px;
+  }
+  .product__inner .product__menu {
+    width: 290px;
+  }
+  .product__inner .product__menu .product__name {
+    font-size: 28px;
+  }
+  .product__inner .product__menu .product__price .product__cost span {
+    font-size: 20px;
+  }
+  .product__inner .product__menu .product__price .product__value .product__value__minus, .product__inner .product__menu .product__price .product__value .product__value__plus {
+    font-size: 20px;
+  }
+  .product__inner .product__menu .product__price .product__value .product__value__number {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .product__inner {
+    flex-direction: column;
+  }
+  .product__inner .product__img {
+    width: 100%;
+  }
+  .product__inner .product__menu {
+    width: 100%;
+  }
+  .product__inner .product__menu .product__name {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+  }
+  .product__inner .product__menu .product__button {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+}
 a {
   text-decoration: none;
   color: #000;
@@ -11867,6 +11911,9 @@ a {
   width: 100%;
 }
 
+.aboutus__info {
+  width: 270px;
+}
 .aboutus__info .aboutus__name h2, .aboutus__info .aboutus__name .h2 {
   font-weight: 700;
   font-size: 42px;
@@ -11893,7 +11940,6 @@ a {
 }
 .aboutus__info .aboutus__description {
   margin-top: 35px;
-  width: 322px;
   color: #000;
 }
 .aboutus__info .aboutus__button {
@@ -11912,6 +11958,53 @@ a {
   text-decoration: none;
 }
 
+@media only screen and (max-width: 1400px) {
+  .main__body {
+    padding: 40px 85px 30px 85px;
+  }
+
+  .aboutus__wrapper .aboutus__img {
+    margin-right: 35px;
+    width: 520px;
+    height: 480px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .aboutus__wrapper .aboutus__img {
+    width: 360px;
+    height: 360px;
+  }
+
+  .aboutus__info .aboutus__name h2, .aboutus__info .aboutus__name .h2 {
+    font-size: 28px;
+  }
+  .aboutus__info .aboutus__name h3, .aboutus__info .aboutus__name .h3 {
+    font-size: 20px;
+  }
+
+  .aboutus__title {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .aboutus__wrapper {
+    display: block;
+  }
+  .aboutus__wrapper .aboutus__img {
+    height: 100%;
+    width: 100%;
+  }
+  .aboutus__wrapper .aboutus__info {
+    width: 100%;
+    margin-top: 30px;
+  }
+  .aboutus__wrapper .aboutus__info .aboutus__name {
+    text-align: center;
+  }
+  .aboutus__wrapper .aboutus__info .aboutus__findonmap {
+    text-align: center;
+  }
+}
 .mobile {
   background: url("/img/mobile-start-bg.jpg") center center/cover no-repeat;
   height: 100vh;
@@ -12077,7 +12170,7 @@ body {
 
 .sidebar__name {
   margin-top: 80px;
-  padding-left: 36px;
+  padding-left: 20px;
 }
 .sidebar__name h2, .sidebar__name .h2 {
   font-weight: 700;
@@ -12096,7 +12189,7 @@ body {
   border-bottom: 2px solid #FFD83F;
   height: 55px;
   line-height: 55px;
-  padding-left: 36px;
+  padding-left: 20px;
   font-weight: 700;
   font-size: 17px;
   text-decoration: none;
@@ -12112,7 +12205,7 @@ body {
 
 .sidebar__contacts {
   margin-top: 18px;
-  padding: 0 36px;
+  padding: 0 20px;
 }
 .sidebar__contacts .sidebar__adress {
   font-weight: 400;
@@ -12189,7 +12282,7 @@ body {
 }
 @media only screen and (max-width: 992px) {
   .main__body {
-    padding: 25px 60px;
+    padding: 25px 20px;
   }
 }
 @media only screen and (max-width: 768px) {

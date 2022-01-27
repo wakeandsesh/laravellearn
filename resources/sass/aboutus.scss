@@ -22,6 +22,7 @@
 }
 
 .aboutus__info {
+    width: 270px;
     .aboutus__name {
         h2 {
             font-weight: 700;
@@ -52,7 +53,6 @@
     }
     .aboutus__description {
         margin-top: 35px;
-        width: 322px;
         color: $black;
     }
     .aboutus__button {
@@ -72,5 +72,62 @@
     }
 }
 
+@media only screen and (max-width: $xxl){
+    .main__body {
+        padding: 40px 85px 30px 85px;
+    }
 
+    .aboutus__wrapper {
+        .aboutus__img {
+            margin-right: 35px;
+            width: 520px;
+            height: 480px;
+        }
+    }
+}
+
+@media only screen and (max-width: $xl){
+    .aboutus__wrapper {
+        .aboutus__img {
+            width: 360px;
+            height: 360px;
+        }
+    }
+
+    .aboutus__info {
+        .aboutus__name {
+            h2 {
+                font-size: 28px;
+            }
+            h3 {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .aboutus__title {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: $lg) {
+    .aboutus__wrapper {
+        display: block;
+        .aboutus__img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .aboutus__info {
+            width: 100%;
+            margin-top: 30px;
+            .aboutus__name {
+                text-align: center;
+            }
+            .aboutus__findonmap {
+                text-align: center;
+            }
+        }
+    }
+}
 

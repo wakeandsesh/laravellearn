@@ -110,9 +110,9 @@
     margin: 20px auto;
 }
 
-@media only screen and (max-width: $xxxl) {
+@media only screen and (max-width: $xxl) {
     .products__inner {
-        grid-template-columns: repeat(4, 250px) !important;
+        grid-template-columns: repeat(4, 200px);
         grid-column-gap: 30px;
         grid-row-gap: 35px;
     }
@@ -120,51 +120,47 @@
 
 @media only screen and (max-width: $xl) {
     .products__inner {
-        grid-template-columns: repeat(4, 180px) !important;
-        grid-column-gap: 30px;
-        grid-row-gap: 35px;
+        grid-template-columns: repeat(3, 200px);
+        .products__card {
+            .products__name {
+                font-size: 17px;
+            }
+        }
     }
 }
 
 @media only screen and (max-width: $lg) {
     .products__inner {
-        grid-template-columns: repeat(4, 150px) !important;
+        grid-template-columns: repeat(3, 150px);
         grid-column-gap: 30px;
         grid-row-gap: 35px;
     }
 }
 
 @media only screen and (max-width: $md) {
+    .products__title {
+        text-align: center;
+    }
     .products__inner {
-        display: grid;
-        grid-template-columns: repeat(3, 165px) !important;
-        grid-column-gap: 30px;
-        grid-row-gap: 35px;
+        grid-template-columns: repeat(2, 220px);
     }
     .categories__mobile {
         display: block;
-    }
-}
-@media only screen and (max-width: $sm) {
-    .products__inner {
-        display: grid;
-        grid-template-columns: repeat(2, 155px) !important;
-        grid-column-gap: 30px;
-        grid-row-gap: 35px;
-    }
-    .category_image {
-        display: none !important;
+        .categories_title {
+            text-align: center;
+        }
+        .categories_mob {
+            justify-content: space-around;
+        }
     }
 }
 
-/*@media screen and (max-width: $sm) and (min-width: $xs) {
+@media only screen and (max-width: $sm) {
     .products__inner {
-        display: grid;
-        grid-template-columns: repeat(2, 200px) !important;
-        grid-column-gap: 30px;
-        grid-row-gap: 35px;
+        grid-template-columns: repeat(2, 155px);
     }
     .category_image {
-        display: none !important;
+        display: none;
     }
-}*/
+}
+

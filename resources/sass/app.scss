@@ -137,7 +137,7 @@ body {
 
 .sidebar__name {
     margin-top: 80px;
-    padding-left: 36px;
+    padding-left: 20px;
     h2 {
         font-weight: 700;
         font-size: 24px;
@@ -156,7 +156,7 @@ body {
     border-bottom: 2px solid #FFD83F;
     height: 55px;
     line-height: 55px;
-    padding-left: 36px;
+    padding-left: 20px;
     font-weight: 700;
     font-size: 17px;
     text-decoration: none;
@@ -171,7 +171,7 @@ body {
 
 .sidebar__contacts {
     margin-top: 18px;
-    padding: 0 36px;
+    padding: 0 20px;
     .sidebar__adress {
         font-weight: 400;
         font-size: 14px;
@@ -254,7 +254,7 @@ body {
 
 @media only screen and (max-width: $lg) {
     .main__body {
-        padding: 25px 60px;
+        padding: 25px 20px;
     }
 }
 
