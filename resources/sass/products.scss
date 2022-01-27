@@ -46,7 +46,7 @@
 .products__inner {
     margin-top: 40px;
     display: grid;
-    grid-template-columns: repeat(5, 250px);
+    grid-template-columns: repeat(5, 220px);
     grid-column-gap: 55px;
     grid-row-gap: 60px;
     justify-content: center;
@@ -129,6 +129,13 @@
     font-size: 16px;
     font-weight: 600;
     margin: 20px auto;
+}
+@media only screen and (max-width: $xxxl) {
+    .products__inner {
+        grid-template-columns: repeat(4, 250px);
+        grid-column-gap: 30px;
+        grid-row-gap: 35px;
+    }
 }
 
 @media only screen and (max-width: $xxl) {

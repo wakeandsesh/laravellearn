@@ -1,19 +1,4 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
-    "/img/aboutus-img.png": "/img/aboutus-img.png",
-    "/img/cart-card-img.png": "/img/cart-card-img.png",
-    "/img/cart-ico.png": "/img/cart-ico.png",
-    "/img/category-burger.png": "/img/category-burger.png",
-    "/img/category-coffee.png": "/img/category-coffee.png",
-    "/img/category-hotdog.png": "/img/category-hotdog.png",
-    "/img/category-sweets.png": "/img/category-sweets.png",
-    "/img/main-logo.png": "/img/main-logo.png",
-    "/img/mobile-start-bg.jpg": "/img/mobile-start-bg.jpg",
-    "/img/mobile-start-footer.png": "/img/mobile-start-footer.png",
-    "/img/mobile-start-header.png": "/img/mobile-start-header.png",
-    "/img/product-big-image.png": "/img/product-big-image.png",
-    "/img/product-cart.png": "/img/product-cart.png",
-    "/img/product-img.png": "/img/product-img.png",
-    "/img/trash-ico.png": "/img/trash-ico.png"
+    "/css/app.css": "/css/app.css"
 }

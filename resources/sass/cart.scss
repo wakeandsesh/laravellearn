@@ -24,6 +24,7 @@ a {
     top: 0;
     right: 0;
     transform: translateX(100%);
+    opacity: 0;
     transition: 0.4s;
     overflow-x: auto;
     /* полоса прокрутки (скроллбар) */
@@ -44,6 +45,7 @@ a {
 .cart__open {
     transition: 0.4s;
     transform: translateX(0);
+    opacity: 1;
 }
 
 .cart__inner {

@@ -11411,7 +11411,7 @@ textarea.form-control-lg {
 .products__inner {
   margin-top: 40px;
   display: grid;
-  grid-template-columns: repeat(5, 250px);
+  grid-template-columns: repeat(5, 220px);
   grid-column-gap: 55px;
   grid-row-gap: 60px;
   justify-content: center;
@@ -11494,6 +11494,13 @@ textarea.form-control-lg {
   margin: 20px auto;
 }
 
+@media only screen and (max-width: 1600px) {
+  .products__inner {
+    grid-template-columns: repeat(4, 250px);
+    grid-column-gap: 30px;
+    grid-row-gap: 35px;
+  }
+}
 @media only screen and (max-width: 1400px) {
   .products__inner {
     grid-template-columns: repeat(4, 200px);
@@ -11723,6 +11730,7 @@ a {
   top: 0;
   right: 0;
   transform: translateX(100%);
+  opacity: 0;
   transition: 0.4s;
   overflow-x: auto;
   /* полоса прокрутки (скроллбар) */
@@ -11745,6 +11753,7 @@ a {
 .cart__open {
   transition: 0.4s;
   transform: translateX(0);
+  opacity: 1;
 }
 
 .cart__inner {
@@ -12143,6 +12152,7 @@ body {
   border-radius: 50%;
   right: -18px;
   padding: 5px;
+  display: none;
 }
 
 .sidebar {
