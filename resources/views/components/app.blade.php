@@ -13,8 +13,7 @@
     <div class="content__wrapper">
         <aside class="sidebar">
                 <div class="sidebar__header__mobile">
-                    <img src="{{ asset('img/aboutus-img.png') }}" alt="" style="position: absolute; top: -70px;
-left: -55px; max-width: 350px; width: 100%; border-radius: 50%;z-index: -1;">
+                    <img class="sidebar__mobile__img" src="{{ asset('img/aboutus-img.png') }}" alt="">
                     <svg class="burger-btn double-burger-btn" width="52" height="80" viewBox="0 0 40 26" xmlns="http://www.w3.org/2000/svg">
                         <rect class="burger-btn--1" width="27" height="3" rx="3" ry="3" />
                         <rect class="burger-btn--2" width="27" height="3" y="10" rx="3" ry="3" />
@@ -22,9 +21,8 @@ left: -55px; max-width: 350px; width: 100%; border-radius: 50%;z-index: -1;">
                     </svg>
                     <div class="main__logo">
                         <a href="/">
-                            <img src="{{ asset('/img/main-logo.png') }}" alt="" style="margin: 0 0 0 180px;">
+                            <img class="sidebar__mobile__logo" src="{{ asset('/img/main-logo.png') }}" alt="">
                         </a>
-
                     </div>
                 </div>
             <div class="sidebar__header__desctop">
@@ -83,7 +81,7 @@ left: -55px; max-width: 350px; width: 100%; border-radius: 50%;z-index: -1;">
                     </a>
                 </div>
             </header>
-            @if(!$agent->isMobile() && isset($category_image))
+            @if(isset($category_image))
                 <div class="big-category-logo">
                     {{ $category_image }}
                 </div>
@@ -106,14 +104,18 @@ left: -55px; max-width: 350px; width: 100%; border-radius: 50%;z-index: -1;">
     <div class="cart-bg fixed-top w-100 h-100" style="display: none;background-color: black; opacity: 0.6;transition: 0.4s"></div>
 
     {{-- Jquery --}}
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    {{--Mask input--}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js" integrity="sha512-d4KkQohk+HswGs6A1d6Gak6Bb9rMWtxjOa0IiY49Q3TeFd5xAzjWXDCBW9RS7m86FQ4RzM2BdHmdJnnKRYknxw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     {{--Sweet Alert--}}
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     {{-- App.js--}}
     <script src="{{ asset('js/app.js') }}"></script>
-
-
-
-
+    <script>
+        jQuery(function($){
+            $("#phone").mask("+38(999) 999-9999");
+        });
+    </script>
 </body>
 </html>

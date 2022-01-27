@@ -12,11 +12,14 @@ $("body").on('click', '.add-cart', function(e){
         },
         url    : "/cart-add",
         data   : {product_id: dataId, quantity: quantity},
-        success: function () {
-            $('.cart__ico__value').load("/ .cart__ico__value>*","");
-            /*$('.cart_value').load("/ .cart_value>*","");*/
-            $('.cart__cards').load("/ .cart__cards>*","");
-            $('.cart__totalprice').load("/ .cart__totalprice>*","");
+        success: function (data) {
+            $('.cart__cards').load(location.href + ' .cart__cards');
+            $('.cart__ico__value h5').html(data['total_quantity']);
+            $('.cart_value h5').html(data['total_quantity']);
+            $('.cart__totalprice span').html(data['total_price']);
+            // $('.cart__ico__value').load("/ .cart__ico__value>*","");
+            // $('.cart_value').load("/ .cart_value>*","");
+            // $('.cart__totalprice').load("/ .cart__totalprice>*","");
             $('.product_value').html(1);
             $('.spinner-bg').hide();
             Swal.fire({
@@ -43,12 +46,11 @@ $('#cartBody').on('click', '#btn-cart-remove', function (e) {
         },
         url    : "/cart-remove",
         data   : {product_id: dataId},
-        success: function () {
-            $('.cart__ico__value').load("/ .cart__ico__value>*","");
-            /*$('.cart_value').load("/ .cart_value>*","");*/
-            $('.cart__cards').load("/ .cart__cards>*","");
-            $('.cart__totalprice').load("/ .cart__totalprice>*","");
-            //$('.cart__button').load("/ .cart__button>*","");
+        success: function (data) {
+            $('.cart__cards').load(location.href + ' .cart__cards');
+            $('.cart__ico__value h5').html(data['total_quantity']);
+            $('.cart_value h5').html(data['total_quantity']);
+            $('.cart__totalprice span').html(data['total_price']);
             $('.spinner-bg').hide();
             Swal.fire({
                 timer: 1500,
@@ -74,11 +76,11 @@ $("#cartBody").on('click', '.quantity-btn', function(e){
         },
         url    : "/cart-update",
         data   : {product_id: dataContent, cart_action: dataAction},
-        success: function () {
-            $('.cart__ico__value').load("/ .cart__ico__value>*","");
-            /*$('.cart_value').load("/ .cart_value>*","");*/
-            $('.cart__cards').load("/ .cart__cards>*","");
-            $('.cart__totalprice').load("/ .cart__totalprice>*","");
+        success: function (data) {
+            $('.cart__cards').load(location.href + ' .cart__cards');
+            $('.cart__ico__value h5').html(data['total_quantity']);
+            $('.cart_value h5').html(data['total_quantity']);
+            $('.cart__totalprice span').html(data['total_price']);
             $('.spinner-bg').hide();
             //$('.cart__button_wrapper').load("/ .cart__button_wrapper>*","");
         }
@@ -125,10 +127,21 @@ $("#cartBody").on('click', '#formCheckoutBtn', function(e){
                     icon: 'error',
                     showConfirmButton: false,
                 });
-            } else {
-                $('.cart__ico__value').load("/ .cart__ico__value>*","");
-                $('.cart__cards').load("/ .cart__cards>*","");
-                $('.cart__totalprice').load("/ .cart__totalprice>*","");
+            } else if(msg == 'error_body') {
+                $('.spinner-bg').hide();
+                Swal.fire({
+                    timer: 2500,
+                    title: 'Ошибка',
+                    html: 'Корзина пуста',
+                    icon: 'error',
+                    showConfirmButton: false,
+                });
+            }
+            else {
+                $('.cart__cards').load(location.href + ' .cart__cards');
+                $('.cart__ico__value h5').html(0);
+                $('.cart_value h5').html(0);
+                $('.cart__totalprice span').html(0);
                 $('form.cart__form')[0].reset();
                 $('.spinner-bg').hide();
                 Swal.fire({

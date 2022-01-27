@@ -18,7 +18,7 @@ class CategoryController extends Controller
     {
         return view('products', [
             'category' => $category,
-            'products' => $category->products()->paginate(10)
+            'products' => $category->products()->latest()->paginate(20)
         ]);
     }
 
