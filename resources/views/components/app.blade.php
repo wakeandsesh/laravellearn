@@ -46,7 +46,6 @@
                     <h2>VIKI GRILL</h2>
                     <h3>Burgers and Coffe</h3>
                 </div>
-
                 <a href="/aboutus" class="sidebar__aboutus {{ request()->is("aboutus") ? 'active' : '' }}">О нас</a>
 
                 <div class="sidebar__contacts">
@@ -112,10 +111,5 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     {{-- App.js--}}
     <script src="{{ asset('js/app.js') }}"></script>
-    <script>
-        jQuery(function($){
-            $("#phone").mask("+38(999) 999-9999");
-        });
-    </script>
 </body>
 </html>

@@ -1,26 +1,22 @@
-/*Cart open/close*/
-$(".cart__toggle").on('click touchstart', function (e) {
-    // prevent default anchor click
+/*Toggle Cart and Sidebar*/
+$(".cart__toggle").on('click', function (e) {
         e.preventDefault();
-        $(".cart-block").addClass("cart__open");
-        $('.cart-bg').show();
-});
-jQuery(function($){
-    $(".cart-bg").mouseup(function (e){
-        var cart = $(".cart-block");
-        var cart_toggle = $(".cart-toggle");
-        if (!cart.is(e.target) && cart.has(e.target).length === 0 && !cart_toggle.is(e.target) && cart_toggle.has(e.target).length === 0)
-        {
-            cart.removeClass("cart__open");
-            $('.burger-btn').removeClass('active');
-            $('.sidebar').removeClass('sidebar-open');
-            $('.cart-bg').hide();
-        }
-    });
+        $(".cart-block").toggleClass("cart__open");
+        $('.cart-bg').toggle();
 });
 
-$('.cart__close__button').click(function () {
+let burger = $('.burger-btn');
+burger.click(function(){
+    $(burger).toggleClass('active');
+    $('.sidebar').toggleClass('sidebar-open');
+    $('.cart-bg').toggle();
+});
+
+$(".cart-bg").on('click', function (e) {
+    e.preventDefault();
     $(".cart-block").removeClass("cart__open");
+    $('.burger-btn').removeClass('active');
+    $('.sidebar').removeClass('sidebar-open');
     $('.cart-bg').hide();
 });
 /**/
@@ -41,10 +37,3 @@ $('.product__quantity__btn').click(function () {
 });
 /**/
 
-/*Burger mobile menu*/
-let burger = $('.burger-btn');
-burger.click(function(){
-    $(burger).toggleClass('active');
-    $('.sidebar').toggleClass('sidebar-open');
-    $('.cart-bg').toggle();
-});

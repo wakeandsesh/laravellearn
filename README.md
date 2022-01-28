@@ -7,6 +7,29 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+##Для установки данного проекта на локальную машину Вам потребуется:
+1. Скачать и развернуть проект с репозитория.
+2. Импортировать БД (файл SQL находится в корне проекта)
+3. Устанавливаем <b>Composer</b> командой:
+   
+   <code>composer install</code>
+
+4. Переименовать файл .env.example => .env и прописать доступы к базе данных, кроме того прописать свои данные MAILTRAP и TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID для корректной отправки писем на почту и в телеграмм.
+   
+5. Устанавливаем <b>npm</b> командой:
+
+   <code>npm install</code>
+
+6. Для корректной работы Voyager возможно понадобится почистить кеш командами:
+   
+   <code>php artisan cache:clear</code>
+   
+   <code>php artisan view:clear</code>
+   
+   <code>php artisan config:clear</code>
+
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:

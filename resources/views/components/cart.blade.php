@@ -1,6 +1,6 @@
 <div class="cart-background" id="cartBody">
     <section class="cart-block">
-        <button class="cart__close__button" type="button">X</button>
+        <button class="cart__close__button cart__toggle" type="button">X</button>
         <div class="cart__inner">
             <div class="cart__header">
                 <div class="cart__title">Корзина</div>
@@ -11,6 +11,7 @@
             </div>
 
             <form class="cart__form" method="POST" action="#">
+                @csrf
                 <input type="text" name="name" placeholder="Имя" autocomplete="off">
                 <input type="text" name="phone" id="phone" placeholder="Телефон" autocomplete="off">
                 <div class="input__require">

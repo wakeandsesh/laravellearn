@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Notification;
 use App\Mail\MailClass;
 use App\Models\Order;
+use App\Notifications\Telegram;
 use Illuminate\Http\Request;
 use Cart;
 
@@ -29,10 +31,9 @@ class OrderController extends Controller
             'paid'=>$paid,
         );
 
-
         $validator = \Validator::make($request->all(), [
-            'name' => 'required|min:2|max:255',
-            'phone' => 'required',
+            'name'  => 'required|min:2|max:255',
+            'phone' => 'required|min:17',
         ]);
 
         $order = new Order();
@@ -44,15 +45,12 @@ class OrderController extends Controller
         $order->body = Cart::getContent();
 
 
-        \Cookie::queue('phone', $request->phone, 120);
-        \Cookie::queue('name', $request->name, 120);
-
-
         if ($validator->passes()) {
 
             $order->save();
 
             \Mail::to('vikiGrill@gmail.com')->send(new MailClass($data));
+            Notification::send($request, new Telegram($order));
 
             Cart::clear();
 

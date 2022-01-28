@@ -10,7 +10,6 @@ use Cart;
 class CartController extends Controller
 {
     public function addToCart(Request $request) {
-
         $product = Product::find($request->product_id);
         Cart::add(array(
             array(
@@ -29,44 +28,33 @@ class CartController extends Controller
     }
 
     public function removeFromCart(Request $request) {
-
         Cart::remove($request->product_id);
         $data = [
             'total_price' => number_format(Cart::getTotal(),2),
             'total_quantity' => Cart::getTotalQuantity()
         ];
         return $data;
-
     }
 
     public function cartUpdate(Request $request) {
-
         $product = Product::find($request->product_id);
 
         if ($request->cart_action == 'increase') {
 
             Cart::update($product->id, array('quantity' => 1));
             if($request->ajax()){
-                /*$cart_products = Cart::getContent()->sortByDesc('id');*/
+                $cart_products = Cart::getContent()->sortByDesc('id');
                 $data = [
                     'total_price' => number_format(Cart::getTotal(),2),
                     'total_quantity' => Cart::getTotalQuantity()
                 ];
-                /*return response()->view('components.cart', compact('cart_products', 'data'));*/
-                return $data;
+                return response()->view('components.cart', compact('data','cart_products'));
             }
-        }
-
-        if ($request->cart_action == 'decrease') {
+        } elseif ($request->cart_action == 'decrease') {
             Cart::update($product->id, array('quantity' => -1));
             if($request->ajax()){
-                /*$cart_products = Cart::getContent()->sortByDesc('id');*/
-                $data = [
-                    'total_price' => number_format(Cart::getTotal(),2),
-                    'total_quantity' => Cart::getTotalQuantity()
-                ];
-                /*return response()->view('components.cart', compact('cart_products', 'data'));*/
-                return $data;
+                $cart_products = Cart::getContent()->sortByDesc('id');
+                return response()->view('components.cart', compact('cart_products'));
             }
         }
     }
